@@ -2,29 +2,33 @@
     box-sizing: border-box;
   }
   
-  .App {
+  .container {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
   }
-  label {
-    margin-right: 2px;
+  
+  .project-list {
+    margin-bottom: 2rem;
   }
-  input {
-    outline: none;
+  
+  .column-container {
+    display: flex;
+    justify-content: space-between;
   }
-  .App .column {
-    width: 20%;
-  }
-  .btn {
-    margin: 2rem;
-    padding: 3px 8px;
+  
+  .column {
+    flex: 1;
+    margin: 0 1rem;
+    width: 300px;
+    font-size: 20px;
+    color: #333333;
   }
   
   .droppable-col {
     width: 100%;
-    background-color: gray;
-    padding: 10px 10px 0 10px;
+    background-color: #f0f5ff;
+    padding: 10px;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
@@ -32,37 +36,33 @@
   
   .item {
     margin-bottom: 10px;
-    background-color: gray;
-    color: white;
-    border: 1px solid white;
-    padding: 5px;
+    background-color: #c2cff2;
+    color: #333333;
+    border: 1px solid #b5d6fd;
+    padding: 10px;
     border-radius: 7px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .item:hover {
+    background-color: #a6b6e1;
   }
   
   .item.dragging {
-    background-color: coral;
+    background-color: #ffcccc;
   }
-  .flex {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #18978f;
-    height: 100%;
-    /* border: 3px solid #1b2430; */
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  }
+  
   .desc {
-    font-size: 10px;
-    background-color: #3d3c42;
+    font-size: 14px;
+    background-color: #dbc8e6;
+    color: #555555;
+    padding: 8px;
+    border-radius: 4px;
   }
+  
   p {
-    font-size: 10px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
   }
-  .footer {
-    position: absolute;
-    bottom: 2px;
-    left: 40%;
-  }
-  .footerText {
-    font-size: 1rem;
-  }
+  
