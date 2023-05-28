@@ -5,24 +5,28 @@
   .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: right;
+    margin-top: 30px;
   }
   
   .project-list {
     margin-bottom: 2rem;
+    margin-left: 180px;
   }
   
   .column-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 180px;
   }
   
   .column {
     flex: 1;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     width: 300px;
-    font-size: 20px;
-    color: #333333;
+    font-size: 18px;
+    color: 'black';
   }
   
   .droppable-col {

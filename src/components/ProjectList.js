@@ -8,7 +8,7 @@ import { v4 } from 'uuid';
 const ProjectList = () => {
   const [projectList, setProjectList] = useState({
     todo: {
-      title: 'Todo',
+      title: 'To do',
       items: [],
     },
     'in-progress': {
@@ -47,7 +47,7 @@ const ProjectList = () => {
       return {
         ...prev,
         todo: {
-          title: 'Todo',
+          title: 'To do',
           items: [
             {
               id: v4(),

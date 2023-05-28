@@ -5,7 +5,10 @@ import Modal from 'react-bootstrap/Modal';
 function CreateProject({ save }) {
   // Handling Modal
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setError(false);
+  };
   const handleShow = () => setShow(true);
 
   // Handling Form Input
@@ -55,7 +58,7 @@ function CreateProject({ save }) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Create Project
+        Create Task
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -65,11 +68,11 @@ function CreateProject({ save }) {
         <Modal.Body>
           <form>
             <div className="form-group">
-              <label>Project Name</label>
+              <label>Task Name</label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter Project Name"
+                placeholder="Enter Task Name"
                 value={projectName}
                 onChange={(e) => setProjectName(e.target.value)}
                 name="taskName"
@@ -77,7 +80,7 @@ function CreateProject({ save }) {
                 ref={inputRef}
               />
               {error && (
-                <p className="text-danger">Please enter a project name.</p>
+                <p className="text-danger">Please enter a task name.</p>
               )}
             </div>
             <div className="form-group">
@@ -85,7 +88,7 @@ function CreateProject({ save }) {
               <textarea
                 rows="5"
                 className="form-control"
-                placeholder="Enter Project Description"
+                placeholder="Enter Task Description"
                 value={description}
                 onChange={(e) => setTaskDesc(e.target.value)}
                 name="taskDesc"
