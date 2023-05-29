@@ -1,22 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
+import AddProject from '../modals/AddProject';
 
 const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      <button className="sidebar-button">Leaderboard</button>
-      <div className="sidebar-dropdown">
-        <button className="sidebar-button">Projects</button>
-        <div className="dropdown-content">
-          <a href="./ProjectList">Project 1</a>
-          <a href="./ProjectList">Project 2</a>
-          <a href="./ProjectList">Project 3</a>
-          <a href="./ProjectList">Project 4</a>
+  const [projectList, setProjectList] = useState({
+    projects: {
+      title: 'Projects',
+      items: [],
+    },
+  });
+
+    const saveProject = (object) => {
+        setProjectList((prev) => {
+        return {
+            ...prev,
+            projects: {
+            ...prev.projects,
+            items: [
+                ...prev.projects.items,
+                {
+                name: object.Name,
+                startDate: object.Date,
+                endDate: object.EndDate,
+                },
+            ],
+            },
+        };
+        });
+    };
+
+    return (
+        <div className="sidebar">
+        <button className="sidebar-button">Leaderboard</button>
+        <div className="sidebar-dropdown">
+            <button className="sidebar-button">Projects</button>
+            <div className="dropdown-content">
+            {projectList.projects.items.map((project, index) => (
+                <a href="./ProjectList" key={index}>
+                {project.name}
+                </a>
+            ))}
+            </div>
         </div>
-      </div>
-      <button className="btn-add">Add Project</button>
-    </div>
-  );
+        <AddProject className="btn-add" save={saveProject} />
+        </div>
+    );
 };
 
 export default Sidebar;

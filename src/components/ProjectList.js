@@ -1,46 +1,46 @@
 import React, { useState } from 'react';
-import CreateProject from '../modals/CreateProject';
+import CreateTask from '../modals/CreateTask';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import _ from 'lodash';
 import './ProjectList.css';
 import { v4 } from 'uuid';
 
 const ProjectList = () => {
-  const [projectList, setProjectList] = useState({
-    todo: {
-      title: 'To do',
-      items: [],
-    },
-    'in-progress': {
-      title: 'In Progress',
-      items: [],
-    },
-    done: {
-      title: 'Completed',
-      items: [],
-    },
-  });
-
-  const handleDragEnd = ({ destination, source }) => {
-    if (!destination) {
-      return;
-    }
-
-    if (destination.index === source.index && destination.droppableId === source.droppableId) {
-      return;
-    }
-    const itemCopy = { ...projectList[source.droppableId].items[source.index] };
-
-    setProjectList((prev) => {
-      prev = { ...prev };
-
-      prev[source.droppableId].items.splice(source.index, 1);
-
-      prev[destination.droppableId].items.splice(destination.index, 0, itemCopy);
-
-      return prev;
+    const [projectList, setProjectList] = useState({
+        todo: {
+        title: 'To do',
+        items: [],
+        },
+        'in-progress': {
+        title: 'In Progress',
+        items: [],
+        },
+        done: {
+        title: 'Completed',
+        items: [],
+        },
     });
-  };
+
+    const handleDragEnd = ({ destination, source }) => {
+        if (!destination) {
+            return;
+        }
+
+        if (destination.index === source.index && destination.droppableId === source.droppableId) {
+            return;
+        }
+        const itemCopy = { ...projectList[source.droppableId].items[source.index] };
+
+        setProjectList((prev) => {
+        prev = { ...prev };
+
+        prev[source.droppableId].items.splice(source.index, 1);
+
+        prev[destination.droppableId].items.splice(destination.index, 0, itemCopy);
+
+        return prev;
+        });
+    };
 
   const saveProject = (object) => {
     setProjectList((prev) => {
@@ -76,8 +76,8 @@ const ProjectList = () => {
   return (
     <div className="container">
       <div className="project-list">
-        <h3>Project List</h3>
-        <CreateProject save={saveProject} />
+        <h3>Project Task List</h3>
+        <CreateTask save={saveProject} />
       </div>
 
       <DragDropContext onDragEnd={handleDragEnd}>
