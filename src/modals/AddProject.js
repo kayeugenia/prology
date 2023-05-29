@@ -67,7 +67,7 @@ function AddProject({ save }) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="warning" onClick={handleShow}>
                 Add Project
             </Button>
 
