@@ -97,10 +97,11 @@ const ProjectList = () => {
                 <div className="column-container">
                 {_.map(projectList, (data, key) => {
                     const count = data.items.length;
+                    const str = count <= 1 ? `${count} task` : `${count} tasks`;
                     return (
                     <div key={key} className="column">
                         <h3>{data.title}</h3>
-                        <h6>{count}</h6>
+                        <h6>{str}</h6>
                         <Droppable droppableId={key}>
                         {(provided, snapshot) => {
                             return (
