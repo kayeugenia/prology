@@ -39,25 +39,25 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <Link to="/Board">
-        <button className="sidebar-button">Leaderboard</button>
-      </Link>
-      <div className="sidebar-dropdown">
-        <button className="sidebar-button">Projects</button>
-        <div className="dropdown-content">
-          <Link to="ProjectList">Project 1</Link>
-          {projectList.projects.items.map((project, index) => (
-            <Link to="ProjectList">{project.name}</Link>
-          ))}
+        <Link to="/Board">
+            <button className="sidebar-button">Leaderboard</button>
+        </Link>
+        <div className="sidebar-dropdown">
+            <button className="sidebar-button">Projects</button>
+            <div className="dropdown-content">
+            <Link to="ProjectList">Project 1</Link>
+            {projectList.projects.items.map((project, index) => (
+                <Link to="ProjectList">{project.name}</Link>
+            ))}
+            </div>
         </div>
-      </div>
-      <div className="btn-add-container">
-        <AddProject className="btn-add" save={saveProject} />
-      </div>
-      <button className="signout" onClick={handleLogOutClick}>
-        Sign out
-      </button>
-    </div>
+        <div className="btn-add-container">
+            <AddProject className="btn-add" save={saveProject} />
+        </div>
+        <button className="signout" onClick={handleLogOutClick}>
+            Sign out
+        </button>
+        </div>
   );
 };
 

@@ -89,7 +89,7 @@ const ProjectList = () => {
     return (
         <div className="container">
             <div className="project-list">
-                <h3>Project Task List</h3>
+                <h2>Project Task List</h2>
                 <CreateTask save={saveProject} />
             </div>
 

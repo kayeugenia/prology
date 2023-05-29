@@ -37,6 +37,19 @@ export default function Board() {
         <div className="profile">
             <Profiles2 ></Profiles2>
         </div>
+        <button className="view">View more</button>
+        <h5 className="rewards">Rewards available</h5>
+        <div className="content">
+            <div class = "box">
+                <img src= "https://media.cntraveler.com/photos/5991d94d2761d54e0354ca3c/16:9/w_3776,h_2124,c_limit/Optimal-Vacation_GettyImages-824071670.jpg" alt="" className="image" />
+            </div>
+            <div class = "box">
+                <img src= "https://wealthofgeeks.com/wp-content/uploads/2021/08/free_gift_cards_MSN.png" alt="" className="image" />
+            </div>
+            <div class = "box">
+                <img src= "https://mc-6411c2dd-ed8a-41b8-8a34-7690-cdn-endpoint.azureedge.net/mhb-media/regions/asia/siingapore/orchardhotelsingapore/dining/images/orchard_hotel_singapore_the_orchard_cafe_buffet_1280x688-min.jpg?rev=35fd50eed8324fc1a21f9421ddef63ff" alt="" className="image" />
+            </div>
+        </div>
     </div>
   );
 }
