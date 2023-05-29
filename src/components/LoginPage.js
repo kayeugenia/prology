@@ -10,32 +10,32 @@ export const supabase = createClient(
 );
 
 function Login() {
-    const navigate = useNavigate();
-  
-    supabase.auth.onAuthStateChange(async (event) => {
-        if (event === "SIGNED_IN") {
-            navigate("/Board");
-        }
-    });
-  
-    return (
-      <Container
-        maxWidth="xs"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-          backgroundColor: "white",
-          justifyContent: "center",
-        }}
-      >
-        <Auth
-          supabaseClient={supabase}
-          appearance={{ theme: ThemeSupa }}
-          providers={["github"]}
-        />
-      </Container>
-    );
-  }
-  
-  export default Login;
+  const navigate = useNavigate();
+
+  supabase.auth.onAuthStateChange(async (event) => {
+    if (event === "SIGNED_IN") {
+      navigate("/Board");
+    }
+  });
+
+  return (
+    <Container
+      maxWidth="xs"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        backgroundColor: "white",
+        justifyContent: "center",
+      }}
+    >
+      <Auth
+        supabaseClient={supabase}
+        appearance={{ theme: ThemeSupa }}
+        providers={["github"]}
+      />
+    </Container>
+  );
+}
+
+export default Login;
