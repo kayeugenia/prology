@@ -15,12 +15,13 @@ export default function App() {
 
   return (
     <div className="App">
-      {showSidebar && <Sidebar />}
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/Board" element={<Board />} />
-        <Route path="/ProjectList" element={<ProjectList />} />
-      </Routes>
+        {showSidebar && <Sidebar />}
+        <Routes>
+            <Route path="/Login" element={<Login />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/Board" element={<Board />} />
+            <Route path="/ProjectList" element={<ProjectList />} />
+        </Routes>
     </div>
   );
 }

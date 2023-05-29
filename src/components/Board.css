@@ -12,3 +12,26 @@
     margin-left: 180px;
     margin-bottom:35px;
 }
+
+.profile {
+    width:60%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.boardbtn {
+    margin-right: 8px;
+    height: 30px;
+    width: 100px;
+    background-color: #0e6dfd; 
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff; 
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 3px 12px 0 rgba(0,0,0,0.19);
+    margin-bottom: 20px;
+}

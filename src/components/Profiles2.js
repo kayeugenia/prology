@@ -17,13 +17,13 @@ function Item() {
     return (
         <div className = "flex">
             <div className = "Item">
-                <img src = "https://global-uploads.webflow.com/5e157548d6f7910beea4e2d6/641d3e7ff397743ca33ac0d1_Screenshot%202023-03-23%20at%205.32.55%20PM.png" alt = "" height= "80px"/>
+                <img src = "https://img.freepik.com/free-vector/illustration-marketing-banner_53876-7966.jpg" alt = "" height= "80px"/>
                 <div className = "info">
-                    <h3 className = 'name text-dark'>IT Department</h3>
+                    <h3 className = 'name text-dark'>Marketing Department</h3>
                 </div>
             </div>
             <div className = 'item'>
-                <span>80 tasks</span>
+                <span>70 tasks</span>
             </div>
         </div>
     )
