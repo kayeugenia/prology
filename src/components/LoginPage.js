@@ -3,6 +3,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import logo from '../images/logo.png';
 
 export const supabase = createClient(
   "https://ercqmrxzajqqjggczleg.supabase.co",
@@ -29,11 +30,22 @@ function Login() {
         justifyContent: "center",
       }}
     >
-      <Auth
-        supabaseClient={supabase}
-        appearance={{ theme: ThemeSupa }}
-        providers={[]}
-      />
+        <img src={logo} alt="Logo" height='110px' width='250px' style={{ marginLeft: '70px' }} />
+        <Auth
+            supabaseClient={supabase}
+            appearance={{ theme: ThemeSupa,
+                variables: {
+                    default: {
+                        colors: {
+                            brand:'#1f2359',
+                            brandAccent: '#443b75',
+                            border: 'none',
+                        },
+                    },
+                },
+            }}
+            providers={[]}
+        />
     </Container>
   );
 }
