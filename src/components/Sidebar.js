@@ -38,7 +38,7 @@ const Sidebar = () => {
             <a href="./ProjectList">Project 1</a>
             {projectList.projects.items.map((project, index) => (
                 <a href="./ProjectList" key={index}>
-                {project.name}
+                    {project.name}
                 </a>
             ))}
             </div>
