@@ -35,6 +35,7 @@ const Sidebar = () => {
         <div className="sidebar-dropdown">
             <button className="sidebar-button">Projects</button>
             <div className="dropdown-content">
+            <a href="./ProjectList">Project 1</a>
             {projectList.projects.items.map((project, index) => (
                 <a href="./ProjectList" key={index}>
                 {project.name}
@@ -42,7 +43,9 @@ const Sidebar = () => {
             ))}
             </div>
         </div>
-        <AddProject className="btn-add" save={saveProject} />
+        <div className = "btn-add-container">
+            <AddProject className="btn-add" save={saveProject} />
+        </div>
         </div>
     );
 };
