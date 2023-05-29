@@ -1,5 +1,6 @@
 import React from 'react';
 import Profiles from './Profiles';
+import './Board.css';
 
 export default function Board() {
     const handleClick = (event) => {

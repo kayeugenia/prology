@@ -75,65 +75,65 @@ const ProjectList = () => {
 
   return (
     <div className="container">
-      <div className="project-list">
-        <h3>Project 2 Task List</h3>
-        <CreateTask save={saveProject} />
-      </div>
-
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="column-container">
-          {_.map(projectList, (data, key) => {
-            return (
-              <div key={key} className="column">
-                <h3>{data.title}</h3>
-
-                <Droppable droppableId={key}>
-                  {(provided, snapshot) => {
-                    return (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                        className="droppable-col"
-                      >
-                        {data.items.map((el, index) => {
-                          return (
-                            <Draggable key={el.id} index={index} draggableId={el.id}>
-                              {(provided, snapshot) => {
-                                console.log(snapshot);
-                                return (
-                                  <div
-                                    className={`item ${snapshot.isDragging && 'dragging'}`}
-                                    ref={provided.innerRef}
-                                    {...provided.draggableProps}
-                                    {...provided.dragHandleProps}
-                                  >
-                                    {el.name}
-                                    <p className="desc">{el.desc}</p>
-                                    <p className="date">
-                                      Start-Date: {el.startDate} <br /> End-Date: {el.endDate}
-                                    </p>
-                                    <button
-                                        className="delete-btn"
-                                        onClick={() => deleteProject(key, el.id)}
-                                    >
-                                        Delete
-                                    </button>
-                                  </div>
-                                );
-                              }}
-                            </Draggable>
-                          );
-                        })}
-                        {provided.placeholder}
-                      </div>
-                    );
-                  }}
-                </Droppable>
-              </div>
-            );
-          })}
+        <div className="project-list">
+            <h3>Project Task List</h3>
+            <CreateTask save={saveProject} />
         </div>
-      </DragDropContext>
+
+        <DragDropContext onDragEnd={handleDragEnd}>
+            <div className="column-container">
+            {_.map(projectList, (data, key) => {
+                return (
+                <div key={key} className="column">
+                    <h3>{data.title}</h3>
+
+                    <Droppable droppableId={key}>
+                    {(provided, snapshot) => {
+                        return (
+                        <div
+                            ref={provided.innerRef}
+                            {...provided.droppableProps}
+                            className="droppable-col"
+                        >
+                            {data.items.map((el, index) => {
+                            return (
+                                <Draggable key={el.id} index={index} draggableId={el.id}>
+                                {(provided, snapshot) => {
+                                    console.log(snapshot);
+                                    return (
+                                    <div
+                                        className={`item ${snapshot.isDragging && 'dragging'}`}
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                    >
+                                        {el.name}
+                                        <p className="desc">{el.desc}</p>
+                                        <p className="date">
+                                        Start-Date: {el.startDate} <br /> End-Date: {el.endDate}
+                                        </p>
+                                        <button
+                                            className="delete-btn"
+                                            onClick={() => deleteProject(key, el.id)}
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                    );
+                                }}
+                                </Draggable>
+                            );
+                            })}
+                            {provided.placeholder}
+                        </div>
+                        );
+                    }}
+                    </Droppable>
+                </div>
+                );
+            })}
+            </div>
+        </DragDropContext>
     </div>
   );
 };

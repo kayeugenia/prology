@@ -3,51 +3,51 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function CreateTask({ save }) {
-  // Handling Modal
-  const [error, setError] = useState(false);
-  const [show, setShow] = useState(false);
-  const handleClose = () => {
-    setShow(false);
-    setError(false);
-  };
-  const handleShow = () => setShow(true);
-
-  // Handling Form Input
-  const [projectName, setProjectName] = useState("");
-  const [description, setTaskDesc] = useState("");
-  const [date, setDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-
-  const inputRef = useRef(null);
-
-  const handleSave = (e) => {
-    e.preventDefault();
-
-    if (projectName.trim() === "") {
-      setError(true);
-      return;
-    }
-
-    const projectObject = {
-      Name: projectName,
-      Description: description,
-      Date: date,
-      EndDate: endDate
+    // Handling Modal
+    const [error, setError] = useState(false);
+    const [show, setShow] = useState(false);
+    const handleClose = () => {
+        setShow(false);
+        setError(false);
     };
-    save(projectObject);
-    handleClose();
-    setProjectName("");
-    setTaskDesc("");
-    setDate("");
-    setEndDate("");
-    setError(false);
-  };
+    const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    if (show) {
-      inputRef.current.focus();
-    }
-  }, [show]);
+    // Handling Form Input
+    const [projectName, setProjectName] = useState("");
+    const [description, setTaskDesc] = useState("");
+    const [date, setDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+
+    const inputRef = useRef(null);
+
+    const handleSave = (e) => {
+        e.preventDefault();
+
+        if (projectName.trim() === "") {
+        setError(true);
+        return;
+        }
+
+        const projectObject = {
+        Name: projectName,
+        Description: description,
+        Date: date,
+        EndDate: endDate
+        };
+        save(projectObject);
+        handleClose();
+        setProjectName("");
+        setTaskDesc("");
+        setDate("");
+        setEndDate("");
+        setError(false);
+    };
+
+    useEffect(() => {
+        if (show) {
+            inputRef.current.focus();
+        }
+    }, [show]);
 
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {

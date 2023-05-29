@@ -12,19 +12,38 @@
     display: block;
     width: 80%;
     padding: 10px;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: 15px;
+    margin-bottom: 0px;
+    background-color: #333333; 
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff; 
+    border-radius: 10px;
+  }
+
+  .signout {
+    display: block;
+    position:absolute;
+    bottom: 10px;
+    width: 40%;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 50px;
     margin-bottom: 10px;
     background-color: #333333; 
     border: none;
     text-align: center;
     cursor: pointer;
     color: #ffffff; 
+    font-size: 14px;
+    border-radius: 10px;
   }
 
   .btn-add-container {
     position: absolute;
-    bottom: 20px;
+    bottom: 70px;
     left: -10px;
     width: 100%;
     padding: 10px;

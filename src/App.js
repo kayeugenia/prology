@@ -1,27 +1,26 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import Sidebar from './components/Sidebar';
-//import ProjectList from './components/ProjectList'
-import { React, useState, useEffect } from 'react';
-import { CssBaseline } from "@mui/material";
-import { supabase } from "./components/LoginPage.js";
-import Leaderboard from "./components/Leaderboard";
-import LoginPage from "./components/LoginPage";
+import Sidebar from './components/Sidebar';
+import { React } from 'react';
+import Board from "./components/Board";
+import Login from "./components/LoginPage";
+import ProjectList from './components/ProjectList';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 export default function App() {
-    const [session, setSession] = useState(null);
-  
-    useEffect(() => {
-      const subscription = supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session);
-      });
-      return () => subscription.data.subscription.unsubscribe();
-    }, []);
-  
+    const location = useLocation();
+
+    // Check if the current location matches the login page path
+    const showSidebar = location.pathname !== '/LoginPage';
+
     return (
         <div className="App">
-                <CssBaseline />
-                {session ? <Leaderboard /> : <LoginPage />}
+        {showSidebar && <Sidebar />}
+        <Routes>
+            <Route path="/LoginPage" element={<Login />} />
+            <Route path="/Board" element={<Board />} />
+            <Route path="/ProjectList" element={<ProjectList />} />
+        </Routes>
         </div>
     );
 }
