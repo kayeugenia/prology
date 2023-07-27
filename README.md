@@ -1,10 +1,13 @@
-# Prology
-## Overview
-### Chosen Theme: Revolutionizing the Workplace
+# Prology Overview
+### Chosen Theme: 
+Revolutionizing the Workplace
 
-### Problem Statement: How can we allow employees to seek joy in their workplaces, while providing them with practical benefits?
+### Problem Statement: 
+How can we allow employees to seek joy in their workplaces, while providing them with practical benefits?
 
-### Tech Stack: Front-end: React, CSS Back-end: Supabase [PostgreSQL]
+### Tech Stack: 
+Front-end: React, CSS 
+Back-end: Supabase [PostgreSQL]
 
 ### Inspiration
 With times making it more competitive for one to be employed, many employees may find themselves stuck in a mundane career that they are not passionate about, or lose their initial motivation after being tied down to a position long term. Furthermore, there are many other factors in a workplace that could add further stress to an employee. These include a lack of a support group, or just having too many tasks to complete without seeing any visible progress.
